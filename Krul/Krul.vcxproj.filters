@@ -13,10 +13,78 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Values &amp; Types">
+      <UniqueIdentifier>{86744877-aa1e-41c1-8717-3d3d32be13fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Integer Operations">
+      <UniqueIdentifier>{108d6d45-9320-4a47-918b-29327f0116de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\String Operations">
+      <UniqueIdentifier>{f867508a-a94a-4eef-aca6-dc9875d29724}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tests &amp; Jumps">
+      <UniqueIdentifier>{a885306f-e5fb-4997-804d-4cb26f5d7494}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Values &amp; Types">
+      <UniqueIdentifier>{214535a7-3e25-4c95-b1a5-08e3d506cb69}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Krul.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Libcurl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Operations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OperationFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextEOL.cpp">
+      <Filter>Source Files\Values &amp; Types</Filter>
+    </ClCompile>
+    <ClCompile Include="LabelDefinition.cpp">
+      <Filter>Source Files\Values &amp; Types</Filter>
+    </ClCompile>
+    <ClCompile Include="LabelReference.cpp">
+      <Filter>Source Files\Values &amp; Types</Filter>
+    </ClCompile>
+    <ClCompile Include="VariableAssignment.cpp">
+      <Filter>Source Files\Values &amp; Types</Filter>
+    </ClCompile>
+    <ClCompile Include="VariableReference.cpp">
+      <Filter>Source Files\Values &amp; Types</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Libcurl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Operations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OperationFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Operation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextEOL.h">
+      <Filter>Header Files\Values &amp; Types</Filter>
+    </ClInclude>
+    <ClInclude Include="LabelDefinition.h">
+      <Filter>Header Files\Values &amp; Types</Filter>
+    </ClInclude>
+    <ClInclude Include="VariableAssignment.h">
+      <Filter>Header Files\Values &amp; Types</Filter>
+    </ClInclude>
+    <ClInclude Include="VariableReference.h">
+      <Filter>Header Files\Values &amp; Types</Filter>
+    </ClInclude>
+    <ClInclude Include="LabelReference.h">
+      <Filter>Header Files\Values &amp; Types</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

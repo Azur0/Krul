@@ -1,2 +1,5 @@
+C:\Users\Azuro\Documents\Krul\Krul\Debug\Krul.vcxproj.CopyComplete
 C:\Users\Azuro\Documents\Krul\Krul\Debug\Krul.exe
 C:\Users\Azuro\Documents\Krul\Krul\Debug\Krul.pdb
+C:\Users\Azuro\Documents\Krul\Krul\Debug\libcurl-d.dll
+C:\Users\Azuro\Documents\Krul\Krul\Debug\zlibd1.dll

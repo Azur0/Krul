@@ -1,20 +1,52 @@
-// Krul.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <map>
+#include <sstream>
+#include <vector>
+#include "Libcurl.h"
+#include "OperationFactory.h"
+#include "TextEOL.h"
+#include "LabelDefinition.h"
+
+std::vector<std::string> raw;
+std::vector<std::string> stack;
+std::map<std::string, int> labels;
+std::map<std::string, std::string> variables;
+
+void initializeOperationFactory();
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	initializeOperationFactory();
+	
+	std::string baseURL = "https://www.swiftcoder.nl/cpp1/start.txt";
+	std::istringstream response(makeCurlRequest(baseURL));
+
+	for (std::string line; std::getline(response, line); )
+	{
+		raw.push_back(line);
+	}
+	
+	int counter = 0;
+	for (const std::string& line : raw)
+	{
+		OperationFactory::GetInstance().GetOperation("\\")->execute(line, raw, stack, labels, variables);
+	}
+
+	// Print stack
+	for (const std::string& i : stack)
+	{
+		std::cout << i << '\n';
+	}
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+void initializeOperationFactory()
+{
+	// Values & Types
+	OperationFactory::GetInstance().RegisterOperation(new TextEOL, "\\");
+	OperationFactory::GetInstance().RegisterOperation(new LabelDefinition, ":");
+	OperationFactory::GetInstance().RegisterOperation(new LabelDefinition, ">");
+	OperationFactory::GetInstance().RegisterOperation(new LabelDefinition, "=");
+	OperationFactory::GetInstance().RegisterOperation(new LabelDefinition, "$");
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+	// Integer operations
+}

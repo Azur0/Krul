@@ -140,6 +140,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Krul.cpp" />
+    <ClCompile Include="LabelDefinition.cpp" />
+    <ClCompile Include="LabelReference.cpp" />
+    <ClCompile Include="Libcurl.cpp" />
+    <ClCompile Include="OperationFactory.cpp" />
+    <ClCompile Include="Operations.cpp" />
+    <ClCompile Include="TextEOL.cpp" />
+    <ClCompile Include="VariableAssignment.cpp" />
+    <ClCompile Include="VariableReference.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LabelDefinition.h" />
+    <ClInclude Include="LabelReference.h" />
+    <ClInclude Include="Libcurl.h" />
+    <ClInclude Include="Operation.h" />
+    <ClInclude Include="OperationFactory.h" />
+    <ClInclude Include="Operations.h" />
+    <ClInclude Include="TextEOL.h" />
+    <ClInclude Include="VariableAssignment.h" />
+    <ClInclude Include="VariableReference.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
