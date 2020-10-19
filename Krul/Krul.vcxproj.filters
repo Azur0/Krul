@@ -125,5 +125,8 @@
     <ClInclude Include="GotoNe.h">
       <Filter>Header Files\Tests &amp; Jumps</Filter>
     </ClInclude>
+    <ClInclude Include="ContainerManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

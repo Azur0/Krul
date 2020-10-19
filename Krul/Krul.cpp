@@ -6,6 +6,7 @@
 
 #include "Duplicate.h"
 #include "Concatenate.h"
+#include "ContainerManager.h"
 #include "Decrement.h"
 #include "GotoNe.h"
 #include "Libcurl.h"
@@ -27,6 +28,8 @@ void initializeOperationFactory();
 int main()
 {
 	initializeOperationFactory();
+
+	ContainerManager containerManager;
 	
 	std::string baseURL = "https://www.swiftcoder.nl/cpp1/start.txt";
 	std::istringstream response(makeCurlRequest(baseURL));
@@ -56,26 +59,6 @@ int main()
 			OperationFactory::GetInstance().GetOperation(raw[i])->execute(raw[i], raw, stack, labels, variables);
 		}
 	}
-
-	//for (const std::string& line : raw)
-	//{
-	//	// Special character check
-	//	if(line.at(0) == '\\' || line.at(0) == ':' || line.at(0) == '>' || line.at(0) == '+' || line.at(0) == '=' || line.at(0) == '$' || std::regex_match(line, std::regex("\\d+(neg)?$")))
-	//	{
-	//		if(std::regex_match(line, std::regex("\\d+(neg)?$")))
-	//		{
-	//			OperationFactory::GetInstance().GetOperation("insert")->execute(line, raw, stack, labels, variables);
-	//		}
-	//		else
-	//		{
-	//			OperationFactory::GetInstance().GetOperation(std::string(1, line.at(0)))->execute(line, raw, stack, labels, variables);
-	//		}
-	//	}
-	//	else
-	//	{
-	//		OperationFactory::GetInstance().GetOperation(line)->execute(line, raw, stack, labels, variables);
-	//	}
-	//}
 
 	// Print stack
 	for (const std::string& i : stack)

@@ -155,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Concatenate.h" />
+    <ClInclude Include="ContainerManager.h" />
     <ClInclude Include="Decrement.h" />
     <ClInclude Include="Duplicate.h" />
     <ClInclude Include="GotoNe.h" />
