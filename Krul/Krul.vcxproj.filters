@@ -28,15 +28,27 @@
     <Filter Include="Header Files\Values &amp; Types">
       <UniqueIdentifier>{214535a7-3e25-4c95-b1a5-08e3d506cb69}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Basic Operations">
+      <UniqueIdentifier>{e683a2d1-31ba-44a0-ba3a-234a35f46d74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Basic Operations">
+      <UniqueIdentifier>{c8b36151-d6b8-45fa-b6e0-a80730460661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\String Operations">
+      <UniqueIdentifier>{4191a8c7-2396-4799-b5ec-c6dcc7d16e67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Integer Operations">
+      <UniqueIdentifier>{be40c76f-cbf7-499b-b071-360e0ba8f0f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tests &amp; Jumps">
+      <UniqueIdentifier>{176e32ac-4469-44ef-a733-294abce725ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Krul.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Libcurl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Operations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="OperationFactory.cpp">
@@ -57,12 +69,24 @@
     <ClCompile Include="VariableReference.cpp">
       <Filter>Source Files\Values &amp; Types</Filter>
     </ClCompile>
+    <ClCompile Include="Insert.cpp">
+      <Filter>Source Files\Basic Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Duplicate.cpp">
+      <Filter>Source Files\String Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Concatenate.cpp">
+      <Filter>Source Files\String Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Decrement.cpp">
+      <Filter>Source Files\Integer Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="GotoNe.cpp">
+      <Filter>Source Files\Tests &amp; Jumps</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Libcurl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Operations.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OperationFactory.h">
@@ -85,6 +109,21 @@
     </ClInclude>
     <ClInclude Include="LabelReference.h">
       <Filter>Header Files\Values &amp; Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Insert.h">
+      <Filter>Header Files\Basic Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Duplicate.h">
+      <Filter>Header Files\String Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Concatenate.h">
+      <Filter>Header Files\String Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Decrement.h">
+      <Filter>Header Files\Integer Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="GotoNe.h">
+      <Filter>Header Files\Tests &amp; Jumps</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

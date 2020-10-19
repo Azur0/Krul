@@ -139,23 +139,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Concatenate.cpp" />
+    <ClCompile Include="Decrement.cpp" />
+    <ClCompile Include="Duplicate.cpp" />
+    <ClCompile Include="GotoNe.cpp" />
+    <ClCompile Include="Insert.cpp" />
     <ClCompile Include="Krul.cpp" />
     <ClCompile Include="LabelDefinition.cpp" />
     <ClCompile Include="LabelReference.cpp" />
     <ClCompile Include="Libcurl.cpp" />
     <ClCompile Include="OperationFactory.cpp" />
-    <ClCompile Include="Operations.cpp" />
     <ClCompile Include="TextEOL.cpp" />
     <ClCompile Include="VariableAssignment.cpp" />
     <ClCompile Include="VariableReference.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Concatenate.h" />
+    <ClInclude Include="Decrement.h" />
+    <ClInclude Include="Duplicate.h" />
+    <ClInclude Include="GotoNe.h" />
+    <ClInclude Include="Insert.h" />
     <ClInclude Include="LabelDefinition.h" />
     <ClInclude Include="LabelReference.h" />
     <ClInclude Include="Libcurl.h" />
     <ClInclude Include="Operation.h" />
     <ClInclude Include="OperationFactory.h" />
-    <ClInclude Include="Operations.h" />
     <ClInclude Include="TextEOL.h" />
     <ClInclude Include="VariableAssignment.h" />
     <ClInclude Include="VariableReference.h" />

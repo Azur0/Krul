@@ -1,11 +1,21 @@
 #include <iostream>
 #include <map>
+#include <regex>
 #include <sstream>
 #include <vector>
+
+#include "Duplicate.h"
+#include "Concatenate.h"
+#include "Decrement.h"
+#include "GotoNe.h"
 #include "Libcurl.h"
 #include "OperationFactory.h"
+#include "Insert.h"
 #include "TextEOL.h"
 #include "LabelDefinition.h"
+#include "LabelReference.h"
+#include "VariableAssignment.h"
+#include "VariableReference.h"
 
 std::vector<std::string> raw;
 std::vector<std::string> stack;
@@ -25,12 +35,47 @@ int main()
 	{
 		raw.push_back(line);
 	}
-	
-	int counter = 0;
-	for (const std::string& line : raw)
+
+	// Index-based iteration
+	for(std::size_t i = 0; i != raw.size(); ++i)
 	{
-		OperationFactory::GetInstance().GetOperation("\\")->execute(line, raw, stack, labels, variables);
+		// Special character check
+		if (raw[i].at(0) == '\\' || raw[i].at(0) == ':' || raw[i].at(0) == '>' || raw[i].at(0) == '+' || raw[i].at(0) == '=' || raw[i].at(0) == '$' || std::regex_match(raw[i], std::regex("\\d+(neg)?$")))
+		{
+			if (std::regex_match(raw[i], std::regex("\\d+(neg)?$")))
+			{
+				OperationFactory::GetInstance().GetOperation("insert")->execute(raw[i], raw, stack, labels, variables);
+			}
+			else
+			{
+				OperationFactory::GetInstance().GetOperation(std::string(1, raw[i].at(0)))->execute(raw[i], raw, stack, labels, variables);
+			}
+		}
+		else
+		{
+			OperationFactory::GetInstance().GetOperation(raw[i])->execute(raw[i], raw, stack, labels, variables);
+		}
 	}
+
+	//for (const std::string& line : raw)
+	//{
+	//	// Special character check
+	//	if(line.at(0) == '\\' || line.at(0) == ':' || line.at(0) == '>' || line.at(0) == '+' || line.at(0) == '=' || line.at(0) == '$' || std::regex_match(line, std::regex("\\d+(neg)?$")))
+	//	{
+	//		if(std::regex_match(line, std::regex("\\d+(neg)?$")))
+	//		{
+	//			OperationFactory::GetInstance().GetOperation("insert")->execute(line, raw, stack, labels, variables);
+	//		}
+	//		else
+	//		{
+	//			OperationFactory::GetInstance().GetOperation(std::string(1, line.at(0)))->execute(line, raw, stack, labels, variables);
+	//		}
+	//	}
+	//	else
+	//	{
+	//		OperationFactory::GetInstance().GetOperation(line)->execute(line, raw, stack, labels, variables);
+	//	}
+	//}
 
 	// Print stack
 	for (const std::string& i : stack)
@@ -41,12 +86,23 @@ int main()
 
 void initializeOperationFactory()
 {
+	// Basic operations
+	OperationFactory::GetInstance().RegisterOperation(new Insert, "insert");
+	
 	// Values & Types
 	OperationFactory::GetInstance().RegisterOperation(new TextEOL, "\\");
 	OperationFactory::GetInstance().RegisterOperation(new LabelDefinition, ":");
-	OperationFactory::GetInstance().RegisterOperation(new LabelDefinition, ">");
-	OperationFactory::GetInstance().RegisterOperation(new LabelDefinition, "=");
-	OperationFactory::GetInstance().RegisterOperation(new LabelDefinition, "$");
+	OperationFactory::GetInstance().RegisterOperation(new LabelReference, ">");
+	OperationFactory::GetInstance().RegisterOperation(new VariableAssignment, "=");
+	OperationFactory::GetInstance().RegisterOperation(new VariableReference, "$");
 
 	// Integer operations
+	OperationFactory::GetInstance().RegisterOperation(new Decrement, "dec");
+
+	// String operations
+	OperationFactory::GetInstance().RegisterOperation(new Duplicate, "dup");
+	OperationFactory::GetInstance().RegisterOperation(new Concatenate, "cat");
+
+	// Tests & Jumps
+	OperationFactory::GetInstance().RegisterOperation(new GotoNe, "gne");
 }
