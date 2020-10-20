@@ -84,6 +84,9 @@
     <ClCompile Include="GotoNe.cpp">
       <Filter>Source Files\Tests &amp; Jumps</Filter>
     </ClCompile>
+    <ClCompile Include="ContainerManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Libcurl.h">

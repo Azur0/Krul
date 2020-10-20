@@ -1,8 +1,8 @@
 #include "Operation.h"
 #include "TextEOL.h"
 
-void TextEOL::execute(std::string value, std::vector<std::string>& raw, std::vector<std::string>& stack, std::map<std::string, int>& labels, std::map<std::string, std::string>& variables)
+void TextEOL::execute(std::string value, int& iterator, ContainerManager& containerManager)
 {
 	value.erase(0, 1);
-	stack.push_back(value);
+	containerManager.stack.push_back(value);
 }

@@ -1,6 +1,6 @@
 #include "Insert.h"
 
-void Insert::execute(std::string value, std::vector<std::string>& raw, std::vector<std::string>& stack, std::map<std::string, int>& labels, std::map<std::string, std::string>& variables)
+void Insert::execute(std::string value, int& iterator, ContainerManager& containerManager)
 {
-	stack.push_back(value);
+	containerManager.stack.push_back(value);
 }

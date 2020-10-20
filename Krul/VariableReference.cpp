@@ -1,7 +1,7 @@
 #include "VariableReference.h"
 
-void VariableReference::execute(std::string value, std::vector<std::string>& raw, std::vector<std::string>& stack, std::map<std::string, int>& labels, std::map<std::string, std::string>& variables)
+void VariableReference::execute(std::string value, int& iterator, ContainerManager& containerManager)
 {
 	value.erase(0, 1);
-	stack.push_back(variables[value]);
+	containerManager.stack.push_back(containerManager.variables[value]);
 }

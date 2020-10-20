@@ -1,7 +1,11 @@
 #include "Concatenate.h"
 
-void Concatenate::execute(std::string value, std::vector<std::string>& raw, std::vector<std::string>& stack, std::map<std::string, int>& labels, std::map<std::string, std::string>& variables)
+void Concatenate::execute(std::string value, int& iterator, ContainerManager& containerManager)
 {
-	std::string concatenatedString = stack.back() + stack.end()[-2];
-	stack.push_back(concatenatedString);
+	std::string concatenatedString = containerManager.stack.end()[-2] + containerManager.stack.end()[-1];
+
+	containerManager.stack.pop_back();
+	containerManager.stack.pop_back();
+	
+	containerManager.stack.push_back(concatenatedString);
 }

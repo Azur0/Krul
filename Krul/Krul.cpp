@@ -18,52 +18,66 @@
 #include "VariableAssignment.h"
 #include "VariableReference.h"
 
-std::vector<std::string> raw;
-std::vector<std::string> stack;
-std::map<std::string, int> labels;
-std::map<std::string, std::string> variables;
+const std::string baseURL = "https://www.swiftcoder.nl/cpp1/";
+std::string appendURL = "start.txt";
 
 void initializeOperationFactory();
+void krulSequence(ContainerManager& containerManager);
 
 int main()
 {
-	initializeOperationFactory();
-
 	ContainerManager containerManager;
+	initializeOperationFactory();
 	
-	std::string baseURL = "https://www.swiftcoder.nl/cpp1/start.txt";
-	std::istringstream response(makeCurlRequest(baseURL));
+	krulSequence(containerManager);
+}
 
+void krulSequence(ContainerManager& containerManager)
+{
+	std::istringstream response(makeCurlRequest(baseURL + appendURL));
+	
 	for (std::string line; std::getline(response, line); )
 	{
-		raw.push_back(line);
+		containerManager.raw.push_back(line);
 	}
 
 	// Index-based iteration
-	for(std::size_t i = 0; i != raw.size(); ++i)
+	for (int i = 0; i != containerManager.raw.size(); ++i)
 	{
 		// Special character check
-		if (raw[i].at(0) == '\\' || raw[i].at(0) == ':' || raw[i].at(0) == '>' || raw[i].at(0) == '+' || raw[i].at(0) == '=' || raw[i].at(0) == '$' || std::regex_match(raw[i], std::regex("\\d+(neg)?$")))
+		if (containerManager.raw[i].at(0) == '\\' || containerManager.raw[i].at(0) == ':' || containerManager.raw[i].at(0) == '>' || containerManager.raw[i].at(0) == '+' || containerManager.raw[i].at(0) == '=' || containerManager.raw[i].at(0) == '$' || std::regex_match(containerManager.raw[i], std::regex("\\d+(neg)?$")))
 		{
-			if (std::regex_match(raw[i], std::regex("\\d+(neg)?$")))
+			if (std::regex_match(containerManager.raw[i], std::regex("\\d+(neg)?$")))
 			{
-				OperationFactory::GetInstance().GetOperation("insert")->execute(raw[i], raw, stack, labels, variables);
+				OperationFactory::GetInstance().GetOperation("insert")->execute(containerManager.raw[i], i, containerManager);
 			}
 			else
 			{
-				OperationFactory::GetInstance().GetOperation(std::string(1, raw[i].at(0)))->execute(raw[i], raw, stack, labels, variables);
+				OperationFactory::GetInstance().GetOperation(std::string(1, containerManager.raw[i].at(0)))->execute(containerManager.raw[i], i, containerManager);
 			}
 		}
 		else
 		{
-			OperationFactory::GetInstance().GetOperation(raw[i])->execute(raw[i], raw, stack, labels, variables);
+			OperationFactory::GetInstance().GetOperation(containerManager.raw[i])->execute(containerManager.raw[i], i, containerManager);
 		}
 	}
 
 	// Print stack
-	for (const std::string& i : stack)
+	for (const std::string& i : containerManager.stack)
 	{
 		std::cout << i << '\n';
+	}
+
+	if(containerManager.raw.back() == "end")
+	{
+		;
+	}
+	else
+	{
+		// Set new iteration data
+		appendURL = containerManager.stack.back();
+		containerManager.clearContainers();
+		krulSequence(containerManager);
 	}
 }
 

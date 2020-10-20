@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Concatenate.cpp" />
+    <ClCompile Include="ContainerManager.cpp" />
     <ClCompile Include="Decrement.cpp" />
     <ClCompile Include="Duplicate.cpp" />
     <ClCompile Include="GotoNe.cpp" />
