@@ -139,34 +139,64 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Absolute.cpp" />
+    <ClCompile Include="Add.cpp" />
     <ClCompile Include="Concatenate.cpp" />
     <ClCompile Include="ContainerManager.cpp" />
     <ClCompile Include="Decrement.cpp" />
+    <ClCompile Include="Divide.cpp" />
     <ClCompile Include="Duplicate.cpp" />
     <ClCompile Include="GotoNe.cpp" />
+    <ClCompile Include="Increment.cpp" />
+    <ClCompile Include="Index.cpp" />
     <ClCompile Include="Insert.cpp" />
     <ClCompile Include="Krul.cpp" />
     <ClCompile Include="LabelDefinition.cpp" />
     <ClCompile Include="LabelReference.cpp" />
+    <ClCompile Include="Length.cpp" />
     <ClCompile Include="Libcurl.cpp" />
+    <ClCompile Include="Modulo.cpp" />
+    <ClCompile Include="Multiply.cpp" />
+    <ClCompile Include="Negate.cpp" />
+    <ClCompile Include="Newline.cpp" />
     <ClCompile Include="OperationFactory.cpp" />
+    <ClCompile Include="Reverse.cpp" />
+    <ClCompile Include="Rotate.cpp" />
+    <ClCompile Include="Substring.cpp" />
+    <ClCompile Include="Subtract.cpp" />
     <ClCompile Include="TextEOL.cpp" />
+    <ClCompile Include="Utility.cpp" />
     <ClCompile Include="VariableAssignment.cpp" />
     <ClCompile Include="VariableReference.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Absolute.h" />
+    <ClInclude Include="Add.h" />
     <ClInclude Include="Concatenate.h" />
     <ClInclude Include="ContainerManager.h" />
     <ClInclude Include="Decrement.h" />
+    <ClInclude Include="Divide.h" />
     <ClInclude Include="Duplicate.h" />
     <ClInclude Include="GotoNe.h" />
+    <ClInclude Include="Increment.h" />
+    <ClInclude Include="Index.h" />
     <ClInclude Include="Insert.h" />
     <ClInclude Include="LabelDefinition.h" />
     <ClInclude Include="LabelReference.h" />
+    <ClInclude Include="Length.h" />
     <ClInclude Include="Libcurl.h" />
+    <ClInclude Include="Modulo.h" />
+    <ClInclude Include="Multiply.h" />
+    <ClInclude Include="Negate.h" />
+    <ClInclude Include="Newline.h" />
     <ClInclude Include="Operation.h" />
     <ClInclude Include="OperationFactory.h" />
+    <ClInclude Include="Reverse.h" />
+    <ClInclude Include="Rotate.h" />
+    <ClInclude Include="Substring.h" />
+    <ClInclude Include="Subtract.h" />
     <ClInclude Include="TextEOL.h" />
+    <ClInclude Include="Utility.h" />
     <ClInclude Include="VariableAssignment.h" />
     <ClInclude Include="VariableReference.h" />
   </ItemGroup>

@@ -87,6 +87,51 @@
     <ClCompile Include="ContainerManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Add.cpp">
+      <Filter>Source Files\Integer Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Multiply.cpp">
+      <Filter>Source Files\Integer Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Divide.cpp">
+      <Filter>Source Files\Integer Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Modulo.cpp">
+      <Filter>Source Files\Integer Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Negate.cpp">
+      <Filter>Source Files\Integer Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Absolute.cpp">
+      <Filter>Source Files\Integer Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Increment.cpp">
+      <Filter>Source Files\Integer Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Subtract.cpp">
+      <Filter>Source Files\Integer Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Reverse.cpp">
+      <Filter>Source Files\String Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Substring.cpp">
+      <Filter>Source Files\String Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Index.cpp">
+      <Filter>Source Files\String Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Length.cpp">
+      <Filter>Source Files\String Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Rotate.cpp">
+      <Filter>Source Files\String Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Newline.cpp">
+      <Filter>Source Files\String Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Libcurl.h">
@@ -130,6 +175,51 @@
     </ClInclude>
     <ClInclude Include="ContainerManager.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Add.h">
+      <Filter>Header Files\Integer Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Multiply.h">
+      <Filter>Header Files\Integer Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Divide.h">
+      <Filter>Header Files\Integer Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Modulo.h">
+      <Filter>Header Files\Integer Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Negate.h">
+      <Filter>Header Files\Integer Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Absolute.h">
+      <Filter>Header Files\Integer Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Increment.h">
+      <Filter>Header Files\Integer Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Subtract.h">
+      <Filter>Header Files\Integer Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Reverse.h">
+      <Filter>Header Files\String Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Substring.h">
+      <Filter>Header Files\String Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Index.h">
+      <Filter>Header Files\String Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Length.h">
+      <Filter>Header Files\String Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Rotate.h">
+      <Filter>Header Files\String Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Newline.h">
+      <Filter>Header Files\String Operations</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
