@@ -15,11 +15,12 @@ public:
 	OperationFactory& operator=(OperationFactory&&) = delete;
 
 	void RegisterOperation(Operation* Operation, std::string OperationIdentifier);
-	Operation* GetOperation(std::string OperationIdentifier);
+	Operation* GetOperation(std::string& OperationIdentifier);
 
 private:
 	static OperationFactory instance;
 	std::map<std::string, Operation*> registeredOperations;
+	std::string getOperationIdentifier(std::string& value);
 
 	OperationFactory() {}
 };

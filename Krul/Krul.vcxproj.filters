@@ -46,6 +46,9 @@
     <Filter Include="Header Files\Functions">
       <UniqueIdentifier>{6b274f1c-9042-45d4-8010-d8320ee6195f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Functions">
+      <UniqueIdentifier>{96234676-33d5-43e1-b1fc-5d96b3a9c009}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Krul.cpp">
@@ -138,10 +141,25 @@
     <ClCompile Include="Goto.cpp">
       <Filter>Source Files\Tests &amp; Jumps</Filter>
     </ClCompile>
-    <ClCompile Include="Function.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GotoGe.cpp">
+      <Filter>Source Files\Tests &amp; Jumps</Filter>
+    </ClCompile>
+    <ClCompile Include="GotoLe.cpp">
+      <Filter>Source Files\Tests &amp; Jumps</Filter>
+    </ClCompile>
+    <ClCompile Include="Function.cpp">
+      <Filter>Source Files\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="Return.cpp">
+      <Filter>Source Files\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="GotoLt.cpp">
+      <Filter>Source Files\Tests &amp; Jumps</Filter>
+    </ClCompile>
+    <ClCompile Include="GotoGt.cpp">
+      <Filter>Source Files\Tests &amp; Jumps</Filter>
+    </ClCompile>
+    <ClCompile Include="GotoEq.cpp">
       <Filter>Source Files\Tests &amp; Jumps</Filter>
     </ClCompile>
   </ItemGroup>
@@ -240,6 +258,21 @@
       <Filter>Header Files\Functions</Filter>
     </ClInclude>
     <ClInclude Include="GotoGe.h">
+      <Filter>Header Files\Tests &amp; Jumps</Filter>
+    </ClInclude>
+    <ClInclude Include="GotoLe.h">
+      <Filter>Header Files\Tests &amp; Jumps</Filter>
+    </ClInclude>
+    <ClInclude Include="Return.h">
+      <Filter>Header Files\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="GotoLt.h">
+      <Filter>Header Files\Tests &amp; Jumps</Filter>
+    </ClInclude>
+    <ClInclude Include="GotoGt.h">
+      <Filter>Header Files\Tests &amp; Jumps</Filter>
+    </ClInclude>
+    <ClInclude Include="GotoEq.h">
       <Filter>Header Files\Tests &amp; Jumps</Filter>
     </ClInclude>
   </ItemGroup>

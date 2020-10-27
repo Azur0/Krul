@@ -16,6 +16,9 @@
 #include "Function.h"
 #include "Goto.h"
 #include "GotoGe.h"
+#include "GotoGt.h"
+#include "GotoLe.h"
+#include "GotoLt.h"
 #include "GotoNe.h"
 #include "Increment.h"
 #include "Index.h"
@@ -30,6 +33,7 @@
 #include "Multiply.h"
 #include "Negate.h"
 #include "Newline.h"
+#include "Return.h"
 #include "Reverse.h"
 #include "Rotate.h"
 #include "Substring.h"
@@ -39,6 +43,7 @@
 
 const std::string baseURL = "https://www.swiftcoder.nl/cpp1/";
 std::string appendURL = "start.txt";
+std::string kloteURL = "AasHgsho.txt";
 
 void initializeOperationFactory();
 void krulSequence(ContainerManager& containerManager);
@@ -53,7 +58,7 @@ int main()
 
 void krulSequence(ContainerManager& containerManager)
 {
-	std::istringstream response(makeCurlRequest(baseURL + appendURL));
+	std::istringstream response(makeCurlRequest(baseURL + kloteURL));
 	
 	for (std::string line; std::getline(response, line); )
 	{
@@ -63,22 +68,14 @@ void krulSequence(ContainerManager& containerManager)
 	// Index-based iteration
 	for (int i = 0; i != containerManager.raw.size(); ++i)
 	{
-		// Special character check
-		if (containerManager.raw[i].at(0) == '\\' || containerManager.raw[i].at(0) == ':' || containerManager.raw[i].at(0) == '>' || containerManager.raw[i].at(0) == '+' || containerManager.raw[i].at(0) == '=' || containerManager.raw[i].at(0) == '$' || std::regex_match(containerManager.raw[i], std::regex("\\d+(neg)?$")))
+		std::string identifier = containerManager.raw[i];
+
+		if(i == containerManager.raw.size() - 1)
 		{
-			if (std::regex_match(containerManager.raw[i], std::regex("\\d+(neg)?$")))
-			{
-				OperationFactory::GetInstance().GetOperation("insert")->execute(containerManager.raw[i], i, containerManager);
-			}
-			else
-			{
-				OperationFactory::GetInstance().GetOperation(std::string(1, containerManager.raw[i].at(0)))->execute(containerManager.raw[i], i, containerManager);
-			}
+			break;
 		}
-		else
-		{
-			OperationFactory::GetInstance().GetOperation(containerManager.raw[i])->execute(containerManager.raw[i], i, containerManager);
-		}
+		
+		OperationFactory::GetInstance().GetOperation(identifier)->execute(identifier, i, containerManager);
 	}
 
 	// Print stack
@@ -97,7 +94,7 @@ void krulSequence(ContainerManager& containerManager)
 		// Set new iteration data
 		appendURL = containerManager.stack.back();
 		containerManager.clearContainers();
-		krulSequence(containerManager);
+		// krulSequence(containerManager);
 	}
 }
 
@@ -138,7 +135,11 @@ void initializeOperationFactory()
 	OperationFactory::GetInstance().RegisterOperation(new Goto, "gto");
 	OperationFactory::GetInstance().RegisterOperation(new GotoNe, "gne");
 	OperationFactory::GetInstance().RegisterOperation(new GotoGe, "gge");
-
+	OperationFactory::GetInstance().RegisterOperation(new GotoLe, "gle");
+	OperationFactory::GetInstance().RegisterOperation(new GotoLt, "glt");
+	OperationFactory::GetInstance().RegisterOperation(new GotoGt, "ggt");
+	
 	// Functions
 	OperationFactory::GetInstance().RegisterOperation(new Function, "fun");
+	OperationFactory::GetInstance().RegisterOperation(new Return, "ret");
 }

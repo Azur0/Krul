@@ -148,7 +148,11 @@
     <ClCompile Include="Duplicate.cpp" />
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="Goto.cpp" />
+    <ClCompile Include="GotoEq.cpp" />
     <ClCompile Include="GotoGe.cpp" />
+    <ClCompile Include="GotoGt.cpp" />
+    <ClCompile Include="GotoLe.cpp" />
+    <ClCompile Include="GotoLt.cpp" />
     <ClCompile Include="GotoNe.cpp" />
     <ClCompile Include="Increment.cpp" />
     <ClCompile Include="Index.cpp" />
@@ -163,6 +167,7 @@
     <ClCompile Include="Negate.cpp" />
     <ClCompile Include="Newline.cpp" />
     <ClCompile Include="OperationFactory.cpp" />
+    <ClCompile Include="Return.cpp" />
     <ClCompile Include="Reverse.cpp" />
     <ClCompile Include="Rotate.cpp" />
     <ClCompile Include="Substring.cpp" />
@@ -182,7 +187,11 @@
     <ClInclude Include="Duplicate.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="Goto.h" />
+    <ClInclude Include="GotoEq.h" />
     <ClInclude Include="GotoGe.h" />
+    <ClInclude Include="GotoGt.h" />
+    <ClInclude Include="GotoLe.h" />
+    <ClInclude Include="GotoLt.h" />
     <ClInclude Include="GotoNe.h" />
     <ClInclude Include="Increment.h" />
     <ClInclude Include="Index.h" />
@@ -197,6 +206,7 @@
     <ClInclude Include="Newline.h" />
     <ClInclude Include="Operation.h" />
     <ClInclude Include="OperationFactory.h" />
+    <ClInclude Include="Return.h" />
     <ClInclude Include="Reverse.h" />
     <ClInclude Include="Rotate.h" />
     <ClInclude Include="Substring.h" />

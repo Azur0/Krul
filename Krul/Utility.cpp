@@ -1,5 +1,7 @@
 #include "Utility.h"
 
+#include <regex>
+
 int Utility::parseInt(const std::string& value)
 {
     std::string number_string = value;
@@ -32,4 +34,22 @@ std::string Utility::toString(const float& value)
     }
 	
     return std::to_string(value);
+}
+
+bool Utility::isSpecialCharacter(const char& value)
+{
+    if ((value >= 65 && value <= 90) || (value >= 97 && value <= 122))
+    {
+        return false;
+    }
+    else if (value >= 48 && value <= 57)
+    {
+        return false;
+    }
+    return true;
+}
+
+bool Utility::isNumeric(const std::string& value)
+{
+    return std::regex_match(value, std::regex("\\d+(neg)?$"));
 }
