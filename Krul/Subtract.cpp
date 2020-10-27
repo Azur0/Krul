@@ -6,7 +6,7 @@ void Subtract::execute(std::string value, int& iterator, ContainerManager& conta
 {
 	int number1 = Utility::parseInt(containerManager.stack.end()[-1]);
 	int number2 = Utility::parseInt(containerManager.stack.end()[-2]);
-	int result = number1 - number2;
+	int result = number2 - number1;
 
 	containerManager.stack.pop_back();
 	containerManager.stack.pop_back();

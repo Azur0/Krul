@@ -1,15 +1,8 @@
-﻿  Concatenate.cpp
-  ContainerManager.cpp
-  Decrement.cpp
-  Duplicate.cpp
-  GotoNe.cpp
-  Insert.cpp
-  Krul.cpp
-  LabelDefinition.cpp
-  LabelReference.cpp
-  OperationFactory.cpp
-  TextEOL.cpp
-  VariableAssignment.cpp
-  VariableReference.cpp
+﻿  Index.cpp
+  Length.cpp
+  Newline.cpp
+  Reverse.cpp
+  Rotate.cpp
+  Substring.cpp
   Generating Code...
   Krul.vcxproj -> C:\Users\Azuro\Documents\Krul\Krul\Debug\Krul.exe

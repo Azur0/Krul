@@ -146,6 +146,9 @@
     <ClCompile Include="Decrement.cpp" />
     <ClCompile Include="Divide.cpp" />
     <ClCompile Include="Duplicate.cpp" />
+    <ClCompile Include="Function.cpp" />
+    <ClCompile Include="Goto.cpp" />
+    <ClCompile Include="GotoGe.cpp" />
     <ClCompile Include="GotoNe.cpp" />
     <ClCompile Include="Increment.cpp" />
     <ClCompile Include="Index.cpp" />
@@ -177,6 +180,9 @@
     <ClInclude Include="Decrement.h" />
     <ClInclude Include="Divide.h" />
     <ClInclude Include="Duplicate.h" />
+    <ClInclude Include="Function.h" />
+    <ClInclude Include="Goto.h" />
+    <ClInclude Include="GotoGe.h" />
     <ClInclude Include="GotoNe.h" />
     <ClInclude Include="Increment.h" />
     <ClInclude Include="Index.h" />

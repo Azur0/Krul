@@ -43,6 +43,9 @@
     <Filter Include="Header Files\Tests &amp; Jumps">
       <UniqueIdentifier>{176e32ac-4469-44ef-a733-294abce725ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Functions">
+      <UniqueIdentifier>{6b274f1c-9042-45d4-8010-d8320ee6195f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Krul.cpp">
@@ -132,6 +135,15 @@
     <ClCompile Include="Newline.cpp">
       <Filter>Source Files\String Operations</Filter>
     </ClCompile>
+    <ClCompile Include="Goto.cpp">
+      <Filter>Source Files\Tests &amp; Jumps</Filter>
+    </ClCompile>
+    <ClCompile Include="Function.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GotoGe.cpp">
+      <Filter>Source Files\Tests &amp; Jumps</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Libcurl.h">
@@ -220,6 +232,15 @@
     </ClInclude>
     <ClInclude Include="Newline.h">
       <Filter>Header Files\String Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Goto.h">
+      <Filter>Header Files\Tests &amp; Jumps</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>Header Files\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="GotoGe.h">
+      <Filter>Header Files\Tests &amp; Jumps</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

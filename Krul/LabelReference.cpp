@@ -3,10 +3,22 @@
 #include <regex>
 
 
+
+#include "LabelDefinition.h"
 #include "OperationFactory.h"
 
 void LabelReference::execute(std::string value, int& iterator, ContainerManager& containerManager)
 {
+	std::string label = value.substr(1, value.length());
+	
+	if (!containerManager.containsLabelReference(label))
+	{
+		std::string labelToFind = ":" + label;
+
+		std::unique_ptr<LabelDefinition> labelDefinitionOperation(new LabelDefinition());
+		labelDefinitionOperation->execute(labelToFind, iterator, containerManager);
+	}
+	
 	value.erase(0, 1);
 	std::string referencedValue = containerManager.raw.at(containerManager.labels.find(value)->second);
 	

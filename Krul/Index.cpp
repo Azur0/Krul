@@ -2,12 +2,13 @@
 
 void Index::execute(std::string value, int& iterator, ContainerManager& containerManager)
 {
-	int index = Utility::parseInt(containerManager.stack.end()[-1]);
-	std::string value = containerManager.stack.end()[-2];
-	std::string result = std::string(1, value.at(index));
-
+	int index = Utility::parseInt(containerManager.stack.back());
 	containerManager.stack.pop_back();
+	
+	std::string currentValue = containerManager.stack.back();
 	containerManager.stack.pop_back();
+	
+	std::string result = std::string(1, currentValue.at(index));
 
 	containerManager.stack.push_back(result);
 }

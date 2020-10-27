@@ -13,6 +13,9 @@
 #include "ContainerManager.h"
 #include "Decrement.h"
 #include "Divide.h"
+#include "Function.h"
+#include "Goto.h"
+#include "GotoGe.h"
 #include "GotoNe.h"
 #include "Increment.h"
 #include "Index.h"
@@ -85,7 +88,7 @@ void krulSequence(ContainerManager& containerManager)
 	}
 
 	// raw back == end veranderen want dit zal gelijk aangeroepen worden in bestand met END
-	if(containerManager.raw.back() == "end")
+	if(containerManager.raw.back() == "end" && containerManager.raw.capacity() == 1)
 	{
 		;
 	}
@@ -132,5 +135,10 @@ void initializeOperationFactory()
 	OperationFactory::GetInstance().RegisterOperation(new Newline, "enl");
 
 	// Tests & Jumps
+	OperationFactory::GetInstance().RegisterOperation(new Goto, "gto");
 	OperationFactory::GetInstance().RegisterOperation(new GotoNe, "gne");
+	OperationFactory::GetInstance().RegisterOperation(new GotoGe, "gge");
+
+	// Functions
+	OperationFactory::GetInstance().RegisterOperation(new Function, "fun");
 }

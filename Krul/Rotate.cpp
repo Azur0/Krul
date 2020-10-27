@@ -2,7 +2,9 @@
 
 void Rotate::execute(std::string value, int& iterator, ContainerManager& containerManager)
 {
-	std::string string = containerManager.stack.end()[-1];
+	std::string string = containerManager.stack.back();
+	containerManager.stack.pop_back();
+	
 	std::string result;
 
 	for (size_t i = 0; i < string.size(); ++i) {
@@ -16,8 +18,6 @@ void Rotate::execute(std::string value, int& iterator, ContainerManager& contain
 			result.append(1, string[i]);
 		}
 	}
-	
-	containerManager.stack.pop_back();
 
 	containerManager.stack.push_back(result);
 }
