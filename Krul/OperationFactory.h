@@ -23,4 +23,5 @@ private:
 	std::string getOperationIdentifier(std::string& value);
 
 	OperationFactory() {}
+	~OperationFactory() {}
 };

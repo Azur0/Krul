@@ -41,13 +41,16 @@
 #include "VariableReference.h"
 
 const std::string baseURL = "https://www.swiftcoder.nl/cpp1/";
-std::string appendURL = "AasHgsho.txt";
+std::string appendURL = "start.txt";
 
 void initializeOperationFactory();
 void krulSequence(ContainerManager& containerManager);
 
 int main()
 {
+	/*_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	_CrtSetBreakAlloc(946942);*/
+	
 	ContainerManager containerManager;
 	initializeOperationFactory();
 	
