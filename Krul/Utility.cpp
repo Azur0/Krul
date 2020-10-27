@@ -4,14 +4,15 @@
 
 int Utility::parseInt(const std::string& value)
 {
-    std::string number_string = value;
+    std::string number = value;
+	
     if (value.find("neg") != std::string::npos)
     {
-        number_string.erase(number_string.find("neg"));
-        number_string.insert(0, "-");
+        number.erase(number.find("neg"));
+        number.insert(0, "-");
     }
 
-    return std::stoi(number_string);
+    return std::stoi(number);
 }
 
 std::string Utility::toString(const int& value)

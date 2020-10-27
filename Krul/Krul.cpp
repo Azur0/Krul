@@ -4,8 +4,6 @@
 #include <sstream>
 #include <vector>
 
-
-
 #include "Absolute.h"
 #include "Add.h"
 #include "Duplicate.h"
@@ -42,8 +40,7 @@
 #include "VariableReference.h"
 
 const std::string baseURL = "https://www.swiftcoder.nl/cpp1/";
-std::string appendURL = "start.txt";
-std::string kloteURL = "AasHgsho.txt";
+std::string appendURL = "AasHgsho.txt";
 
 void initializeOperationFactory();
 void krulSequence(ContainerManager& containerManager);
@@ -58,7 +55,7 @@ int main()
 
 void krulSequence(ContainerManager& containerManager)
 {
-	std::istringstream response(makeCurlRequest(baseURL + kloteURL));
+	std::istringstream response(makeCurlRequest(baseURL + appendURL));
 	
 	for (std::string line; std::getline(response, line); )
 	{
@@ -69,12 +66,6 @@ void krulSequence(ContainerManager& containerManager)
 	for (int i = 0; i != containerManager.raw.size(); ++i)
 	{
 		std::string identifier = containerManager.raw[i];
-
-		if(i == containerManager.raw.size() - 1)
-		{
-			break;
-		}
-		
 		OperationFactory::GetInstance().GetOperation(identifier)->execute(identifier, i, containerManager);
 	}
 
@@ -94,7 +85,7 @@ void krulSequence(ContainerManager& containerManager)
 		// Set new iteration data
 		appendURL = containerManager.stack.back();
 		containerManager.clearContainers();
-		// krulSequence(containerManager);
+		krulSequence(containerManager);
 	}
 }
 

@@ -4,7 +4,7 @@
 
 void Absolute::execute(std::string value, int& iterator, ContainerManager& containerManager)
 {
-	int number = abs(Utility::parseInt(containerManager.stack.end()[-1]));
+	int number = abs(Utility::parseInt(containerManager.stack.back()));
 
 	containerManager.stack.pop_back();
 
