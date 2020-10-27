@@ -1,5 +1,2 @@
-﻿  Function.cpp
-  Krul.cpp
-  Return.cpp
-  Generating Code...
-  Krul.vcxproj -> C:\Users\Azuro\Documents\Krul\Krul\Debug\Krul.exe
+﻿  Krul.cpp
+C:\Users\Azuro\Documents\Krul\Krul\Krul.cpp(54): error C4700: uninitialized local variable 'containerManager' used

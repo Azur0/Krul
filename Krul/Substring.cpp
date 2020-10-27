@@ -11,8 +11,7 @@ void Substring::execute(std::string value, int& iterator, ContainerManager& cont
 	std::string currentValue = containerManager.stack.back();
 	containerManager.stack.pop_back();
 	
-	// std::string result = currentValue.substr(from, to - 1);
-	std::string result = currentValue.substr(from, to);
+	std::string result = currentValue.substr(from, to - from);
 
 	containerManager.stack.push_back(result);
 }

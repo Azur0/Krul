@@ -3,6 +3,7 @@
 #include <regex>
 #include <sstream>
 #include <vector>
+#include <crtdbg.h>
 
 #include "Absolute.h"
 #include "Add.h"
@@ -51,11 +52,16 @@ int main()
 	initializeOperationFactory();
 	
 	krulSequence(containerManager);
+
+	// delete containerManager;
+	
+	_CrtDumpMemoryLeaks();
 }
 
 void krulSequence(ContainerManager& containerManager)
 {
 	std::istringstream response(makeCurlRequest(baseURL + appendURL));
+	bool endIsHere = false;
 	
 	for (std::string line; std::getline(response, line); )
 	{
@@ -65,6 +71,12 @@ void krulSequence(ContainerManager& containerManager)
 	// Index-based iteration
 	for (int i = 0; i != containerManager.raw.size(); ++i)
 	{
+		if(containerManager.raw[i] == "end")
+		{
+			endIsHere = true;
+			break;
+		}
+		
 		std::string identifier = containerManager.raw[i];
 		OperationFactory::GetInstance().GetOperation(identifier)->execute(identifier, i, containerManager);
 	}
@@ -75,14 +87,9 @@ void krulSequence(ContainerManager& containerManager)
 		std::cout << i << '\n';
 	}
 
-	// raw back == end veranderen want dit zal gelijk aangeroepen worden in bestand met END
-	if(containerManager.raw.back() == "end" && containerManager.raw.capacity() == 1)
+	// Set new iteration data
+	if(!endIsHere)
 	{
-		;
-	}
-	else
-	{
-		// Set new iteration data
 		appendURL = containerManager.stack.back();
 		containerManager.clearContainers();
 		krulSequence(containerManager);
