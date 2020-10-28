@@ -1,7 +1,5 @@
 #include "OperationFactory.h"
 
-OperationFactory OperationFactory::instance;
-
 void OperationFactory::RegisterOperation(std::shared_ptr<Operation> operation, std::string operationIdentifier)
 {
 	registeredOperations[operationIdentifier] = operation;

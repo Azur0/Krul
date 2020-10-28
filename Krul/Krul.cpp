@@ -9,12 +9,10 @@
 #include "Libcurl.h"
 #include "OperationFactory.h"
 
-const std::string baseURL = "https://www.swiftcoder.nl/cpp1/";
-std::string appendURL = "start.txt";
+std::unique_ptr<OperationFactory> operationFactory;
 
 void start();
-void initializeOperationFactory();
-void krulSequence(ContainerManager& containerManager);
+void krulSequence(ContainerManager& containerManager, std::string baseUrl, std::string appendUrl);
 
 int main()
 {
@@ -28,13 +26,14 @@ int main()
 
 void start()
 {
+	operationFactory = std::make_unique<OperationFactory>();
 	ContainerManager containerManager;
-	krulSequence(containerManager);
+	krulSequence(containerManager, "https://www.swiftcoder.nl/cpp1/", "start.txt");
 }
 
-void krulSequence(ContainerManager& containerManager)
+void krulSequence(ContainerManager& containerManager, std::string baseUrl, std::string appendUrl)
 {
-	std::istringstream response(makeCurlRequest(baseURL + appendURL));
+	std::istringstream response(makeCurlRequest(baseUrl + appendUrl));
 	bool endIsHere = false;
 	
 	for (std::string line; std::getline(response, line); )
@@ -53,7 +52,7 @@ void krulSequence(ContainerManager& containerManager)
 		
 		std::string identifier = containerManager.raw[i];
 		
-		OperationFactory::GetInstance().GetOperation(identifier)->execute(identifier, i, containerManager);
+		operationFactory->GetOperation(identifier)->execute(identifier, i, containerManager);
 	}
 
 	// Print stack
@@ -65,8 +64,8 @@ void krulSequence(ContainerManager& containerManager)
 	// Set new iteration data
 	if(!endIsHere)
 	{
-		appendURL = containerManager.stack.back();
+		appendUrl = containerManager.stack.back();
 		containerManager.clearContainers();
-		krulSequence(containerManager);
+		krulSequence(containerManager, baseUrl, appendUrl);
 	}
 }

@@ -39,22 +39,6 @@
 class OperationFactory
 {
 public:
-	static OperationFactory& GetInstance() { return instance; }
-
-	void RegisterOperation(std::shared_ptr<Operation> Operation, std::string OperationIdentifier);
-	std::shared_ptr<Operation> GetOperation(std::string& OperationIdentifier);
-
-	// prohibit copy & move
-	OperationFactory(const OperationFactory&) = delete;
-	OperationFactory(OperationFactory&&) = delete;
-	OperationFactory& operator=(const OperationFactory&) = delete;
-	OperationFactory& operator=(OperationFactory&&) = delete;
-	
-private:
-	static OperationFactory instance;
-	std::map<std::string, std::shared_ptr<Operation>> registeredOperations;
-	std::string getOperationIdentifier(std::string& value);
-
 	OperationFactory()
 	{
 		// Basic operations
@@ -100,4 +84,11 @@ private:
 		RegisterOperation(std::make_shared<Function>(), "fun");
 		RegisterOperation(std::make_shared<Return>(), "ret");
 	}
+
+	void RegisterOperation(std::shared_ptr<Operation> Operation, std::string OperationIdentifier);
+	std::shared_ptr<Operation> GetOperation(std::string& OperationIdentifier);
+	
+private:
+	std::map<std::string, std::shared_ptr<Operation>> registeredOperations;
+	std::string getOperationIdentifier(std::string& value);
 };
