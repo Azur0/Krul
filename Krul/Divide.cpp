@@ -4,6 +4,13 @@
 
 void Divide::execute(std::string value, int& iterator, ContainerManager& containerManager)
 {
+	if (containerManager.stack.size() == 0)
+	{
+		std::cout << "Operation: " + value + " failed, no elements available in container.";
+
+		return;
+	}
+	
 	const int number1 = Utility::parseInt(containerManager.stack.back());
 	containerManager.stack.pop_back();
 	

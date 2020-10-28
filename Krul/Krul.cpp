@@ -19,7 +19,18 @@ int main()
 	// _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	// _CrtSetBreakAlloc(74333);
 
-	start();
+	try
+	{
+		start();
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what();
+	}
+	catch(...)
+	{
+		std::cout << "An unknown exception occurred, stopping execution of application...";
+	}
 	
 	_CrtDumpMemoryLeaks();
 }
