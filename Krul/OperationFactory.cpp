@@ -2,12 +2,12 @@
 
 OperationFactory OperationFactory::instance;
 
-void OperationFactory::RegisterOperation(Operation* operation, std::string operationIdentifier)
+void OperationFactory::RegisterOperation(std::shared_ptr<Operation> operation, std::string operationIdentifier)
 {
 	registeredOperations[operationIdentifier] = operation;
 }
 
-Operation* OperationFactory::GetOperation(std::string& operationIdentifier)
+std::shared_ptr<Operation> OperationFactory::GetOperation(std::string& operationIdentifier)
 {
 	const std::string identifier = this->getOperationIdentifier(operationIdentifier);
 

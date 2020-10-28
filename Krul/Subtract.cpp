@@ -4,12 +4,13 @@
 
 void Subtract::execute(std::string value, int& iterator, ContainerManager& containerManager)
 {
-	int number1 = Utility::parseInt(containerManager.stack.end()[-1]);
-	int number2 = Utility::parseInt(containerManager.stack.end()[-2]);
-	int result = number2 - number1;
-
+	const int number1 = Utility::parseInt(containerManager.stack.back());
 	containerManager.stack.pop_back();
+	
+	const int number2 = Utility::parseInt(containerManager.stack.back());
 	containerManager.stack.pop_back();
+	
+	const int result = number2 - number1;
 
 	containerManager.stack.push_back(Utility::toString(result));
 }
